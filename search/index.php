@@ -48,7 +48,7 @@ $name = $_POST['name'];
 
     $stmt = $conn->query($sql_select);
     $stmt ->bindValue(1,$name);
-    $stmt ->execute();
+    $stmt -> $execute();
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
         echo "<h2>People who are registered:</h2>";
