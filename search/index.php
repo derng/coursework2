@@ -46,7 +46,7 @@ $name = $_POST['name'];
     // Retrieve data
     $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE concat('%',?,'%')";
 
-    $stmt = $conn->query($sql_select);
+    $stmt = $conn->prepare($sql_select);
     $stmt ->bindValue(1,$name);
     $stmt -> $execute();
     $registrants = $stmt->fetchAll(); 
