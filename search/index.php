@@ -44,11 +44,11 @@
 $name = $_POST['name'];
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE concat('%',?,'%')";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name='$name'";
 
-    $stmt = $conn->prepare($sql_select);
-    $stmt ->bindValue(1,$name);
-    $stmt -> $execute();
+    $stmt = $conn->query($sql_select);
+    //$stmt ->bindValue(1,$name);
+   // $stmt -> $execute();
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
         echo "<h2>People who are registered:</h2>";
